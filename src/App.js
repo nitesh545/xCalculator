@@ -11,6 +11,10 @@ function App() {
     };
 
     let equals = (str) => {
+        if (str === "") {
+            setResult("Error");
+            return;
+        }
         let ans = eval(str);
         setResult(ans);
     };
@@ -23,7 +27,7 @@ function App() {
     return (
         <div className="App">
             <h1>React Calculator</h1>
-            <input value={inValue} readOnly></input>
+            <input type="text" value={inValue} readOnly></input>
             <h3>{result}</h3>
             <div className="grid-container">
                 <button onClick={() => appendToInValue("9")}>9</button>
